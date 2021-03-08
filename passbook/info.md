@@ -21,5 +21,5 @@ scan 'pb:user'
 ## Unfamiliar class
 Path
 ## Redis-cli command
-keys *
-smembers ''
+- keys *
+- smembers ''
