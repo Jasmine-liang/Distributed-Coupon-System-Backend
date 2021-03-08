@@ -1,12 +1,12 @@
 package com.passbook.vo;
 
-import com.google.common.base.Enums;
+
 import com.passbook.constant.FeedbackType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.hbase.thirdparty.com.google.common.base.Enums;
 
-import java.util.Locale;
 
 @Data
 @NoArgsConstructor
@@ -20,6 +20,7 @@ public class Feedback {
     private String templateId;
     /*评论内容*/
     private String comment;
+
 
     public boolean validate(){
         FeedbackType feedbackType = Enums.getIfPresent(

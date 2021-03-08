@@ -1,5 +1,13 @@
 ## HBase ORM ?
-HBase Row to Object
+HBase Row to Object      
+## HBase shell command
+```
+list_namespace_tables 'pb'
+desc 'pb:user'
+scan 'pb:user'
+
+```
+
 ## Map and HashMap
 要去温习了    
 以及这种语法是什么意思？
@@ -10,3 +18,8 @@ HBase Row to Object
 ```
 ## Java 8 :: operator
 [Java 8 Lambda in details part III : Method and constructor referencing | DuyHai's Java Blog](https://doanduyhai.wordpress.com/2012/07/14/java-8-lambda-in-details-part-iii-method-and-constructor-referencing/)
+## Unfamiliar class
+Path
+## Redis-cli command
+keys *
+smembers ''

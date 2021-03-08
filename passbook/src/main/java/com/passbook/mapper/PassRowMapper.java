@@ -28,6 +28,7 @@ public class PassRowMapper implements RowMapper<Pass> {
        pass.setTemplateId(Bytes.toString(result.getValue(FAMILY_I, TEMPLATE_ID)));
        pass.setToken(Bytes.toString(result.getValue(FAMILY_I, TOKEN)));
 
+       pass.setRowKey(Bytes.toString(result.getRow()));
         String[] patterns = new String[] {"yyyy-DD-dd"};
         pass.setAssignedDate(DateUtils.parseDate(Bytes.toString(result.getValue(FAMILY_I, ASSINGED_DATE)), patterns));
 

@@ -39,7 +39,7 @@ public class MerchantsCtl {
     }
     /*
     *
-    * {"backgroud":1,"desc":"test","end":1615279578998,"hasToken":false,"id":18,"limit":1000,"start":1614415578998,"summary":"å¹å®¢","title":"å¹å®¢"}]
+    * {"background":1,"desc":"test","end":1615279578998,"hasToken":false,"id":18,"limit":1000,"start":1614415578998,"summary":"å¹å®¢","title":"å¹å®¢"}]
     * */
     @ResponseBody
     @PostMapping(value = "/drop")

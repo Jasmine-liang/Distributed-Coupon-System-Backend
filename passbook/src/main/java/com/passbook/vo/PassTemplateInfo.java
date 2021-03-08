@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 /*
 * 优惠券模板信息
 * */
-@EqualsAndHashCode(callSuper = true)
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PassTemplateInfo extends PassTemplate{
+public class PassTemplateInfo {
     /*优惠券模板*/
     private PassTemplate passTemplate;
     /*优惠券对应的商户*/

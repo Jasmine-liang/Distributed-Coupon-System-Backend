@@ -1,0 +1,54 @@
+{
+  "data":
+{
+  "passTemplateInfos":[
+    {
+      "merchants":{
+        "address":"Beijing",
+        "businessLicenseUrl":"www.google.com",
+        "id":18,
+        "isAudit":true,
+        "logoUrl":"www.google.com",
+        "name":"幕客",
+        "phone":"12344"
+      },
+      "passTemplate":{
+        "backgroud":2,
+        "desc":"asd",
+        "end":1615996800000,
+        "hasToken":true,
+        "id":18,
+        "limit":10000,
+        "start":1614268800000,
+        "summary":"幕客",
+        "title":"幕客-has-token"
+      }
+    },
+    {
+      "merchants":{
+        "address":"Beijing",
+        "businessLicenseUrl":"www.google.com",
+        "id":18,
+        "isAudit":true,
+        "logoUrl":"www.google.com",
+        "name":"幕客",
+        "phone":"12344"
+      },
+      "passTemplate":{
+        "backgroud":2,
+        "desc":"asd",
+        "end":1615996800000,
+        "hasToken":false,
+        "id":18,
+        "limit":10000,
+        "start":1614268800000,
+        "summary":"幕客",
+        "title":"幕客-1"
+      }
+    }
+  ],
+  "userId":484980
+},
+"errorCode":0,
+"errorMsg":""
+}

@@ -11,12 +11,14 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /*
 * 消费 Kafka 中的 PassTemplate
 * * */
 @Component
 @Slf4j
+@Service
 public class ConsumePassTemplate {
     /*pass 相关的 HBase 服务*/
     private final IHBasePassService passService;

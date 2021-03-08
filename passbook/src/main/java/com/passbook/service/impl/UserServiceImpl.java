@@ -17,16 +17,15 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-* 创建用户服务实现
-* */
-@Service
 @Slf4j
+@Service
 public class UserServiceImpl implements IUserService {
-    /*HBase 客户端*/
-    private HbaseTemplate hbaseTemplate;
-    /*Redis 客户端*/
-    private StringRedisTemplate redisTemplate;
+
+    /** HBase 客户端 */
+    private final HbaseTemplate hbaseTemplate;
+
+    /** redis 客户端 */
+    private final StringRedisTemplate redisTemplate;
 
     @Autowired
     public UserServiceImpl(HbaseTemplate hbaseTemplate, StringRedisTemplate redisTemplate) {
@@ -36,6 +35,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public Response createUser(User user) throws Exception {
+
         byte[] FAMILY_B = Constants.UserTable.FAMILY_B.getBytes();
         byte[] NAME = Constants.UserTable.NAME.getBytes();
         byte[] AGE = Constants.UserTable.AGE.getBytes();
@@ -44,11 +44,11 @@ public class UserServiceImpl implements IUserService {
         byte[] FAMILY_O = Constants.UserTable.FAMILY_O.getBytes();
         byte[] PHONE = Constants.UserTable.PHONE.getBytes();
         byte[] ADDRESS = Constants.UserTable.ADDRESS.getBytes();
-        /*当前用户总数*/
+
         Long curCount = redisTemplate.opsForValue().increment(Constants.USE_COUNT_REDIS_KEY, 1);
         Long userId = genUserId(curCount);
 
-        List<Mutation> datas = new ArrayList<>();
+        List<Mutation> datas = new ArrayList<Mutation>();
         Put put = new Put(Bytes.toBytes(userId));
 
         put.addColumn(FAMILY_B, NAME, Bytes.toBytes(user.getBaseInfo().getName()));
@@ -68,12 +68,13 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-     * 生成 userId
+     * <h2>生成 userId</h2>
      * @param prefix 当前用户数
      * @return 用户 id
-     */
-    private Long genUserId(Long prefix){
+     * */
+    private Long genUserId(Long prefix) {
+
         String suffix = RandomStringUtils.randomNumeric(5);
         return Long.valueOf(prefix + suffix);
-    };
+    }
 }

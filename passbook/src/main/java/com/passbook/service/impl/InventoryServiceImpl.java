@@ -17,6 +17,7 @@ import org.apache.hadoop.hbase.filter.LongComparator;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
 * 获取库存信息， 只返回用户没有领取的
 * */
 @Slf4j
+@Service
 public class InventoryServiceImpl implements IInventoryService {
     /*HBase 客户端*/
     @Autowired
@@ -42,7 +44,6 @@ public class InventoryServiceImpl implements IInventoryService {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public Response getInventoryInfo(Long userId) throws Exception {
         Response allUserPass = userPassService.getUserAllPassInfo(userId);
         List<PassInfo> passInfos = (List<PassInfo>) allUserPass.getData();

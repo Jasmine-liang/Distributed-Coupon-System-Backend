@@ -6,3 +6,4 @@
   systemctl start mysqld.service
   mysql -u root -p
 ```
+password: 9s-HSZs_RgpP
